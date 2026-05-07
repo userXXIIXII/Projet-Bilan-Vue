@@ -1,5 +1,5 @@
 <template>
     <section>
-        <h1>Header</h1>
+        <p>Ma page à propos</p>
     </section>
 </template>

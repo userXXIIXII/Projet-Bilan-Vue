@@ -1,5 +1,5 @@
 <template>
     <section>
-        <h1>Header</h1>
+        <p>Erreur 404</p>
     </section>
 </template>
