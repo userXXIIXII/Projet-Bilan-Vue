@@ -1,6 +1,6 @@
 <template>
     <footer class="footer">
-        <p>© - Mon Portfolio</p>
+        <p>© {{ buildDate }}- Mon Portfolio</p>
         <div class="social">
             <a href="https://www.linkedin.com/in/aarin-deb" target="_blank">
                 <img src="@/assets/linkedin.png" alt="LinkedIn Icon" class="icon">
@@ -15,6 +15,10 @@
     </footer>
 </template>
 
+<script setup>
+    const buildDate = import.meta.env.VITE_BUILD_DATE
+</script>
+
 <style scoped>
     .footer {
         text-align: center;
@@ -24,8 +28,8 @@
         url("@/assets/theme.png");
         background-position: center;
         background-size: cover;
-        box-shadow: 0 -3px 30px #7f5af0;
-        border-top: 2px solid #9b8cff;
+        box-shadow: 0 -3px 60px #7f5af0;
+        border-top: 2px solid #7f5af0;
         box-sizing: border-box;
     }
 
