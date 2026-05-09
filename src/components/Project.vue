@@ -1,5 +1,5 @@
 <template>
-    <section>
+    <section id="Project">
         <h1>Mes réalisations</h1>
 
         <div class="projects">
@@ -79,7 +79,6 @@
         align-items: center;
         justify-content: center;
         gap: 50px;
-        padding: 50px 0;
     }
 
     .bio {

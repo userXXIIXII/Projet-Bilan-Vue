@@ -46,6 +46,8 @@
 
         box-shadow: 0 4px 20px #7f5af0;
         box-sizing: border-box;
+        padding: 0 40px;
+        z-index: 1000;
     }
 
     ul {

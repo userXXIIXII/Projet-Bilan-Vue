@@ -1,5 +1,5 @@
 <template>
-    <section>
+    <section id="About">
         <h1>Qui suis-je ?</h1>
 
         <div class="container">
@@ -34,7 +34,6 @@
         align-items: center;
         justify-content: center;
         gap: 50px;
-        padding: 50px 0;
     }
 
     .container {
