@@ -2,14 +2,25 @@
     <section id="Project">
         <h1>Mes réalisations</h1>
 
+        <!--Carte projet-->
         <div class="projects">
+            <!--Pourchaque éléments dans projects, je l'appelle 
+            key = identifiant unique pour chaque projet
+            v-for = parcourt chaque projet du tableau-->
             <div v-for="p in projects" :key="p.id" class="card">
                 <h3>{{ p.titre }}</h3>
                 <img :src="p.preview" class="card-image" alt="Image du Projet">
 
+                <!--Au click, selected devient le projet cliqué-->
                 <button @click="selected = p">Voir</button>
             </div>
         </div>
+
+        <!--Si selected = true, alors le modal s'affiche
+        
+        Modal qui affiche les détails du projet sélectionné
+        
+        Selected = la variable qui contient le projet choisi-->
 
         <Modal 
             :isOpen="selected !== null"
@@ -73,7 +84,6 @@
 <style scoped>
     section {
         height: calc(100vh - 200px);
-        background-color: #16161a;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -88,7 +98,7 @@
 
         .projects {
         display: flex;
-        gap: 20px;
+        gap: 50px;
         justify-content: center;
     }
 
@@ -139,8 +149,8 @@
 
     /* hover effet */
     .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 10px 10px 20px black;
+        transform: scale(1.1);
+        box-shadow: 20px 20px 30px black;
     }
 </style>
 

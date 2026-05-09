@@ -1,3 +1,8 @@
+:root {
+    font-family: 'Google Sans';
+    font-weight: 400;
+}
+
 html, body {
     margin: 0;
     padding: 0;
@@ -13,6 +18,7 @@ body::-webkit-scrollbar {
 
 main {
     margin-top: 200px;
+    background: linear-gradient( #16161a, #242629, #16161a, #242629, #16161a);
 }
 
 #app {
@@ -21,6 +27,7 @@ main {
 
 section {
     scroll-margin-top: 200px;
+    
 }
 
 h1 {
@@ -38,8 +45,7 @@ p {
 }
 
 a {
-    color: #fffffe;
-    text-decoration: none;
+    text-decoration: inherit;
     display: inline-block;
     transition: transform 0.3s ease;
     color: #94a1b2;
@@ -52,4 +58,8 @@ a:hover {
 
 ul {
     list-style: none;
+}
+
+li {
+    font-size: 18px;
 }

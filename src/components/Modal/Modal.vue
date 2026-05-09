@@ -1,7 +1,9 @@
 <template>
     <transition name="modal">
-        <div v-if="isOpen" class="modal" @click.self="$emit('close')">
 
+        <!--$emit = envoyer un événement au parent-->
+        <div v-if="isOpen" class="modal" @click.self="$emit('close')">
+            
             <div class="modal-inner">
                 <button @click="$emit('close')">X</button>
 

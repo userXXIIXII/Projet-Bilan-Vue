@@ -9,13 +9,25 @@
         <nav>
             <ul>
                 <li>
-                    <a href="#About">A propos</a>
+                    <a href="#About" 
+                    @click="activeLink = 'About'"
+                    :class="{ active: activeLink === 'About'}">
+                        A propos
+                    </a>
                 </li>
                 <li>
-                    <a href="#Project">Réalisations</a>
+                    <a href="#Project"
+                    @click="activeLink = 'Project'"
+                    :class="{ active: activeLink === 'Project'}">
+                        Réalisations
+                    </a>
                 </li>
                 <li>
-                    <a href="#Contact">Contact</a>
+                    <a href="#Contact" 
+                    @click="activeLink = 'Contact'"
+                    :class="{ active: activeLink === 'Contact'}">
+                        Contact
+                    </a>
                 </li>
             </ul>
         </nav>
@@ -23,7 +35,9 @@
 </template>
 
 <script setup>
+    import { ref } from "vue"
 
+    const activeLink = ref("")
 </script>
 
 <style scoped>
@@ -44,7 +58,7 @@
         background-color: #16161a;
         color: #fffffe;
 
-        box-shadow: 0 4px 20px #7f5af0;
+        box-shadow: 0 3px 30px #7f5af0;
         box-sizing: border-box;
         padding: 0 40px;
         z-index: 1000;
@@ -53,6 +67,11 @@
     ul {
         display: flex;
         gap: 20px;
+    }
+
+    .active {
+        text-decoration: underline;
+        text-underline-offset: 6px;
     }
 
     .logo {

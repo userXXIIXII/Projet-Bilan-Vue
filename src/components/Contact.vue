@@ -3,7 +3,13 @@
         <h1>Contactez moi</h1>
 
         <div class="contact">
+
+            <!--@submit = "quand le formulaire est envoyé"
+            .prevent = empeche le comportement par défaut (rechargement de la page)
+            sendEmail = appelle la fonction sendEmail()-->
             <form @submit.prevent="sendEmail">
+
+                <!--v-model = liaison automatique variable/input-->
                 <input v-model="name" type="text" placeholder="Prénom" required>
                 <input v-model="surname" type="text" placeholder="Nom" required>
                 <input v-model="email" type="email" placeholder="Email" required>
@@ -13,14 +19,17 @@
                 <button type="submit">Envoyer</button>
             </form>
 
-            <p v-if="success">Message envoyé !</p>
+            <!--Affichier p si succes = true-->
+            <p v-if="success" class="success">Message envoyé !</p>
+
+            <p v-if="errorMessage" class="error">{{ errorMessage }}</p>
         </div>
     </section>
 </template>
 
 <script setup>
     import { ref} from "vue"
-    import emailjs from "@emailjs/browser"
+    import emailjs from "@emailjs/browser" //système pour l'envoi du message
 
     //Variable réactives
     const name = ref("")
@@ -40,6 +49,7 @@
             import.meta.env.VITE_EMAILJS_SERVICE_ID,
             import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
             {
+                //liaison des variables avec les données du template
                 prenom: name.value,
                 nom: surname.value,
                 email: email.value,
@@ -48,7 +58,8 @@
             },
             import.meta.env.VITE_EMAILJS_PUBLIC_KEY
         )
-        .then(() => {
+        //then() = quand l'email est envoyé avec succès, exécute la suite
+        .then(() => { 
             success.value = true
 
             //Reset du champs
@@ -60,20 +71,22 @@
         })
         .catch(() => {
             errorMessage.value = "Erreur lors de l'envoi du message. Veuillez réessayer."
+            console.log("Error")
         })
     }
+
+    
+
 </script>
 
 <style scoped>
 
     section {
         height: calc(100vh - 200px);
-        background-color: #16161a;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 50px;
     }
 
     .contact {
@@ -159,6 +172,12 @@
     .success {
         margin-top: 15px;
         color: #4ade80;
+        font-weight: 500;
+    }
+
+    .error {
+        margin-top: 15px;
+        color: #f87171;
         font-weight: 500;
     }
 </style>

@@ -28,7 +28,6 @@
 <style scoped>
     section {
         height: calc(100vh - 200px);
-        background-color: #16161a;
         display: flex;
         flex-direction: column;
         align-items: center;
