@@ -1,6 +1,6 @@
 <template>
     <section id="Home">
-        <img src="@/assets/introPic.jpg" class="pp" alt="Photo de Aarin Deb">
+        <img src="@/assets/photoHome.png" class="pp" alt="Photo de Aarin Deb">
         <p>Salut!👋 Je suis</p>
         <h1>Aarin DEB</h1>
         <p>

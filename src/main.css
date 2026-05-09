@@ -30,7 +30,9 @@ main {
     width: 100%;
     min-width: 100%;
     margin-top: 200px;
-    background: linear-gradient(to bottom right, #16161a, #242629, #16161a, #242629, #16161a);
+background:
+    radial-gradient(circle at top center, rgba(127, 90, 240, 0.15), transparent 35%),
+    linear-gradient(135deg, #16161a 0%, #242629 25%, #16161a 100%);
 }
 
 main.noHeader {
