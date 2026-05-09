@@ -96,7 +96,7 @@
         text-align: center;
     }
 
-        .projects {
+    .projects {
         display: flex;
         gap: 50px;
         justify-content: center;
@@ -110,10 +110,13 @@
         align-items: center;
         width: 300px;
         height: 300px;
-        background: #16161a;
+        background-image: linear-gradient(rgba(22, 22, 26, 0.65), rgba(22, 22, 26, 0.65)),
+        url("@/assets/theme.png");
+        background-position: center;
         border-radius: 12px;
         overflow: hidden;
         box-shadow: 10px 10px 20px black;
+        border: 1px solid #94a1b2;
 
         transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
@@ -139,18 +142,27 @@
 
     /* bouton */
     .card button {
-        padding: 8px 12px;
+        padding: 10px 14px;
         border: none;
         border-radius: 6px;
-        background: #7f5af0;
-        color: white;
+        background: linear-gradient(to bottom right, #9b8cff, #7f5af0, #16161a);
+        border: 2px solid #7f5af0;
+        box-shadow: 5px 5px 20px black;
+        color: #fffffe;
+        font-weight: 700;
         cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    .card button:hover {
+        transform: scale(1.1);
+        box-shadow: 5px 5px 20px rgba(127, 90, 240, 0.5);
     }
 
     /* hover effet */
     .card:hover {
         transform: scale(1.1);
-        box-shadow: 20px 20px 30px black;
+        box-shadow: 20px 20px 50px black;
     }
 
     @media (max-width: 768px) {

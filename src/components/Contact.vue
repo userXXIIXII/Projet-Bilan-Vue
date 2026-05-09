@@ -95,11 +95,14 @@
         margin: 80px auto;
         padding: 30px;
 
-        background-color: #16161a;
+        background-image: linear-gradient(rgba(22, 22, 26, 0.65), rgba(22, 22, 26, 0.65)),
+        url("@/assets/theme.png");
+        background-position: center;
         backdrop-filter: blur(10px);
 
         border-radius: 16px;
         box-shadow: 10px 10px 20px black;
+        border: 1px solid #94a1b2;
 
         text-align: center;
     }
@@ -121,6 +124,7 @@
         border: 1px solid transparent;
 
         background-color: #242629;
+        box-shadow: 5px 5px 10px black;
         color: white;
 
         outline: none;
@@ -128,7 +132,12 @@
         }
 
         /* focus (quand l'utilisateur clique dessus)*/
-        input:focus, textarea:focus {
+    input:focus, textarea:focus {
+        border: 1px solid #7f5af0;
+        box-shadow: 0 0 0 2px rgba(127,90,240,0.3);
+    }
+
+    input:hover, textarea:hover {
         border: 1px solid #7f5af0;
         box-shadow: 0 0 0 2px rgba(127,90,240,0.3);
     }
@@ -140,7 +149,7 @@
         }
 
         /* bouton */
-        button {
+    button {
         margin-top: 15px;
         width: 100%;
 
@@ -148,7 +157,8 @@
         border: none;
         border-radius: 8px;
 
-        background: linear-gradient(135deg, #7f5af0, #5a3df0);
+        background: linear-gradient(to bottom right, #9b8cff, #7f5af0, #16161a);
+        border: 2px solid #7f5af0;
         color: white;
         font-weight: bold;
 
@@ -159,7 +169,7 @@
     /* hover bouton */
     button:hover {
         transform: translateY(-2px);
-        box-shadow: 0 10px 20px rgba(127,90,240,0.4);
+        box-shadow: 0 10px 20px rgba(127,90,240,0.5);
     }
 
     /* bouton disabled */

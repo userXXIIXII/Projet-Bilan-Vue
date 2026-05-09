@@ -45,7 +45,8 @@
     .aboutPic {
         max-height: 500px;
         border-radius: 5px;
-        box-shadow: 10px 10px 20px black;
+        box-shadow: 10px 10px 30px black;
+        border: 1px solid #94a1b2;
     }
 
     .bio {

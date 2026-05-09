@@ -26,6 +26,7 @@
         max-height: 350px;
         border-radius: 50%;
         box-shadow: 10px 10px 20px black;
+        border: 1px solid #94a1b2;
     }
 
     @media (max-width: 768px) {

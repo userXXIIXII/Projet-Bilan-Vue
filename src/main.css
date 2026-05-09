@@ -1,5 +1,5 @@
 :root {
-    font-family: 'Google Sans';
+    font-family: 'Montserrat', sans-serif;
     font-weight: 400;
 }
 
@@ -30,7 +30,7 @@ main {
     width: 100%;
     min-width: 100%;
     margin-top: 200px;
-    background: linear-gradient(#16161a, #242629, #16161a, #242629, #16161a);
+    background: linear-gradient(to bottom right, #16161a, #242629, #16161a, #242629, #16161a);
 }
 
 main.noHeader {
@@ -48,16 +48,24 @@ section {
 
 h1 {
     font-size: 50px;
+    color: transparent;
+    -webkit-text-stroke: 1px #fffffe;
 }
 
 h2 {
     font-size: 26px;
+    color: transparent;
+    -webkit-text-stroke: 1px #fffffe;
 }
 
 p {
     font-size: 24px;
-    color: #94a1b2;
     line-height: 1.8;
+
+    background: linear-gradient(to right, #fffffe, #94a1b2);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 a {
@@ -70,6 +78,7 @@ a {
 a:hover {
     transform: scale(1.2);
     text-shadow: 10px 10px 10px black;
+    color: #fffffe;
 }
 
 ul {
@@ -80,6 +89,13 @@ ul {
 
 li {
     font-size: 18px;
+}
+
+button,
+input,
+textarea,
+select {
+    font-family: inherit;
 }
 
     @media (max-width: 768px) {

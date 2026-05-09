@@ -65,7 +65,11 @@
         height: 200px;
         max-height: none;
 
-        background-color: #16161a;
+        background-image: linear-gradient(rgba(22, 22, 26, 0.65), rgba(22, 22, 26, 0.65)),
+        url("@/assets/theme.png");
+        background-position: center;
+        background-size: cover;
+        border-bottom: 2px solid #9b8cff;
         color: #fffffe;
 
         box-shadow: 0 3px 30px #7f5af0;

@@ -19,8 +19,13 @@
     .footer {
         text-align: center;
         padding: 10px 20px;
-        background-color: #16161a;
+        background-image: 
+        linear-gradient(rgba(22, 22, 26, 0.65), rgba(22, 22, 26, 0.65)),
+        url("@/assets/theme.png");
+        background-position: center;
+        background-size: cover;
         box-shadow: 0 -3px 30px #7f5af0;
+        border-top: 2px solid #9b8cff;
         box-sizing: border-box;
     }
 

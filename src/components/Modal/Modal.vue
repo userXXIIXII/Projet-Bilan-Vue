@@ -79,7 +79,9 @@
     .modal-inner {
         position: relative; 
 
-        background: #1e1e1e;
+        background-image: linear-gradient(rgba(22, 22, 26, 0.65), rgba(22, 22, 26, 0.65)),
+        url("@/assets/theme.png");
+        background-position: center;
         color: white;
 
         padding: 20px;
@@ -136,8 +138,9 @@
 
     /* bouton démo */
     .btn.demo {
-        background: #7f5af0;
+        background: linear-gradient(to bottom right, #9b8cff, #7f5af0, #16161a);
         color: white;
+        border: 2px solid #7f5af0;
     }
 
     /* bouton github */
@@ -149,15 +152,11 @@
 
     /* hover */
         .btn:hover {
-        transform: translateY(-2px);
-    }
-
-    .btn.demo:hover {
-        background: #6c4de0;
+        transform: translateY(-4px);
     }
 
     .btn.github:hover {
-        background: #7f5af0;
+        background: linear-gradient(to top right, #9b8cff, #7f5af0, #16161a);
         color: white;
     }
 </style>
