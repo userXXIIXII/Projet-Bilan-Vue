@@ -1,16 +1,22 @@
 <script setup>
-  import { RouterView } from "vue-router";
+  import { RouterView, useRoute } from "vue-router";
   import Header from "./components/Header.vue";
   import Footer from "./components/Footer.vue";
+
+  import { computed } from "vue";
+
+  const route = useRoute()
+
+  const isNotFound = computed(() => route.name === "not-found")
 </script>
 
 <template>
-  <Header />
+  <Header v-if="!isNotFound" />
 
-  <main id="main">
+  <main id="main" :class="{ noHeader: isNotFound }">
     <RouterView />
   </main>
 
-  <Footer />
+  <Footer v-if="!isNotFound" />
 </template>
 

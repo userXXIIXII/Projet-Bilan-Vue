@@ -33,6 +33,13 @@ main {
     background: linear-gradient(#16161a, #242629, #16161a, #242629, #16161a);
 }
 
+main.noHeader {
+    margin-top: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+}
+
 section {
     width: 100%;
     min-width: 100%;
