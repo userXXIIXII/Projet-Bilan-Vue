@@ -75,7 +75,7 @@
         box-shadow: 0 3px 30px #7f5af0;
         box-sizing: border-box;
         padding: 0 40px;
-        z-index: 1000;
+        z-index: 100;
     }
 
     ul {
@@ -166,17 +166,33 @@
             top: 100%;
             left: 0;
             width: 100%;
-            background: #16161a;
 
-            display: none;
+            background-image: linear-gradient(rgba(22, 22, 26, 0.65), rgba(22, 22, 26, 0.65)),
+            url("@/assets/theme.png");
+            background-position: center;
+            background-size: cover;
+
+            box-shadow: 0 15px 30px black;
+            border-top: 1px solid #9b8cff;
+
+            display: flex;
             flex-direction: column;
             align-items: center;
             padding: 20px 0;
+
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-20px);
+
+            transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
         }
 
         /* menu ouvert */
         nav.open {
             display: flex;
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
         }
 
         nav a {
@@ -204,20 +220,36 @@
         }
 
         nav {
-            display: none; 
             position: absolute;
             top: 100%;
             left: 0;
             width: 100%;
-            background: #16161a;
 
+            background-image: linear-gradient(rgba(22, 22, 26, 0.65), rgba(22, 22, 26, 0.65)),
+            url("@/assets/theme.png");
+            background-position: center;
+            background-size: cover;
+
+            box-shadow: 0 15px 30px black;
+            border-top: 1px solid #9b8cff;
+
+            display: flex;
             flex-direction: column;
             align-items: center;
             padding: 20px 0;
+
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-20px);
+
+            transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
         }
 
         nav.open {
             display: flex;
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
         }
 
         nav a {

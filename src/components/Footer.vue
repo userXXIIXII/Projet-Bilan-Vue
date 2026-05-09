@@ -37,11 +37,12 @@
         display: flex;
         flex-direction: row;
         justify-content: center;  
-        gap: 15px; 
+        gap: 30px; 
     }
 
     .icon {
         height: 50px;
+        filter: drop-shadow(10px 10px 10px black);
     }
 
     .icon:hover {
