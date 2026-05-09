@@ -3,13 +3,22 @@
     font-weight: 400;
 }
 
-html, body {
+* {
+    box-sizing: border-box;
+}
+
+html, body, #app {
     margin: 0;
     padding: 0;
     width: 100%;
+    min-width: 100%;
+}
+
+html, body {
     scroll-behavior: smooth;
     color: #fffffe;
     text-shadow: 10px 10px 10px black;
+    overflow-x: hidden;
 }
 
 body::-webkit-scrollbar {
@@ -17,17 +26,17 @@ body::-webkit-scrollbar {
 }
 
 main {
-    margin-top: 200px;
-    background: linear-gradient( #16161a, #242629, #16161a, #242629, #16161a);
-}
-
-#app {
+    display: block;
     width: 100%;
+    min-width: 100%;
+    margin-top: 200px;
+    background: linear-gradient(#16161a, #242629, #16161a, #242629, #16161a);
 }
 
 section {
+    width: 100%;
+    min-width: 100%;
     scroll-margin-top: 200px;
-    
 }
 
 h1 {
@@ -58,8 +67,38 @@ a:hover {
 
 ul {
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 li {
     font-size: 18px;
 }
+
+    @media (max-width: 768px) {
+        main {
+            margin-top: 120px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        h1 {
+            font-size: 35px;
+        }
+        
+        h2 {
+            font-size: 26px;
+        }
+
+        p {
+            font-size: 20px;
+            line-height: 1.5;
+        }
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+        main {
+            padding: 0 20px;
+            margin-top: 160px;
+        }
+    }

@@ -27,7 +27,7 @@
 
 <style scoped>
     section {
-        height: calc(100vh - 200px);
+        min-height: calc(100vh - 200px);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -51,5 +51,38 @@
     .bio {
         max-width: 850px;
         text-align: center;
+    }
+
+    @media (max-width: 768px) {
+
+        section {
+            min-height: auto;
+            padding: 60px 20px;
+            gap: 0;
+        }
+
+        .container {
+            flex-direction: column;
+        }
+
+        .aboutPic {
+            width: 90%;
+        }
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+        section {
+            min-height: auto;
+            padding: 60px 20px;
+            gap: 0;
+        }
+
+        .container {
+            flex-direction: column;
+        }
+
+        .aboutPic {
+            width: 90%;
+        }
     }
 </style>

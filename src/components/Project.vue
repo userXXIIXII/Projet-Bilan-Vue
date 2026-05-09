@@ -83,7 +83,7 @@
 
 <style scoped>
     section {
-        height: calc(100vh - 200px);
+        min-height: calc(100vh - 200px);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -151,6 +151,16 @@
     .card:hover {
         transform: scale(1.1);
         box-shadow: 20px 20px 30px black;
+    }
+
+    @media (max-width: 768px) {
+        .projects {
+            flex-direction: column;
+        }
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+
     }
 </style>
 
