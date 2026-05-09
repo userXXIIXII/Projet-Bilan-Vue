@@ -1,0 +1,46 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    scroll-behavior: smooth;
+    color: #fffffe;
+    text-shadow: 10px 10px 10px black;
+}
+
+main {
+    margin-top: 200px;
+}
+
+#app {
+    width: 100%;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+p {
+    font-size: 22px;
+    color: #94a1b2;
+}
+
+a {
+    color: #fffffe;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.3s ease;
+    color: #94a1b2;
+}
+
+a:hover {
+    transform: scale(1.2);
+    text-shadow: 10px 10px 10px black;
+}
+
+ul {
+    list-style: none;
+}
