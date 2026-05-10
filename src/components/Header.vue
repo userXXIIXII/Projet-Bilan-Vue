@@ -3,9 +3,7 @@
         <a href="#Home">
             <img src="@/assets/logo.png" class="logo" alt="Logo">
         </a>
-        <h1>
-            Potfolio de Aarin Deb
-        </h1>
+
         <nav :class="{ open: isOpen }">
             <ul>
                 <li>
@@ -39,11 +37,17 @@
             <span></span>
             <span></span>
         </div>
+
+        <a href="/src/public/CV.pdf" download class="btn btn-cv">
+            Télécharger CV 
+            <Download class="icon"/>
+        </a>
     </header>
 </template>
 
 <script setup>
     import { ref } from "vue"
+    import { Download } from "lucide-vue-next";
 
     const activeLink = ref("")
 
@@ -62,17 +66,13 @@
         right: 0;
         
         width: 100%;
-        height: 200px;
+        height: 100px;
         max-height: none;
 
-        background-image: linear-gradient(rgba(22, 22, 26, 0.65), rgba(22, 22, 26, 0.65)),
-        url("@/assets/theme.png");
-        background-position: center;
-        background-size: cover;
-        border-bottom: 2px solid #9b8cff;
+        background: #060811;
+        border-bottom: 1px solid #949494;
         color: #fffffe;
 
-        box-shadow: 0 3px 30px #7f5af0;
         box-sizing: border-box;
         padding: 0 40px;
         z-index: 100;
@@ -89,7 +89,7 @@
     }
 
     .logo {
-        height: 150px;
+        height: 100px;
         filter: drop-shadow(10px 10px 10px black);
     }
 
@@ -97,6 +97,30 @@
         filter: drop-shadow(15px 15px 15px black);
     }
 
+    .btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn-cv {
+        border: 2px solid #7f5af0;
+        background: transparent;
+        color: #94a1b2;
+        height: 40px;
+        width: 200px;
+    }
+
+    .icon {
+        height: 20px;
+        width: 20px;
+    }
 
     .burger {
         display: none;
