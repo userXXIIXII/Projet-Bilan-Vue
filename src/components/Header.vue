@@ -69,7 +69,7 @@
         height: 100px;
         max-height: none;
 
-        background: #060811;
+        background: #04070f;
         border-bottom: 1px solid #949494;
         color: #fffffe;
 
@@ -80,11 +80,12 @@
 
     ul {
         display: flex;
-        gap: 20px;
+        gap: 50px;
     }
 
     .active {
         text-decoration: underline;
+        color: #7f5af0;
         text-underline-offset: 6px;
     }
 

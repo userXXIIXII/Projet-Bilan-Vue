@@ -43,8 +43,21 @@ section {
     width: 100%;
     min-width: 100%;
     scroll-margin-top: 100px;
-    background: #060811;
+    background: #04070f;
 }
+
+    a {
+    text-decoration: inherit;
+    display: inline-block;
+    transition: transform 0.3s ease;
+    color: #94a1b2;
+    }
+
+    a:hover {
+        transform: scale(1.2);
+        text-shadow: 10px 10px 10px black;
+        color: #7f5af0;
+    }
 
 h1 {
     font-size: 70px;
@@ -52,25 +65,13 @@ h1 {
 }
 
 h2 {
-    font-size: 26px;
+    font-size: 30px;
 }
 
 p {
-    font-size: 24px;
+    font-size: 22px;
     line-height: 1.8;
-}
-
-a {
-    text-decoration: inherit;
-    display: inline-block;
-    transition: transform 0.3s ease;
     color: #94a1b2;
-}
-
-a:hover {
-    transform: scale(1.2);
-    text-shadow: 10px 10px 10px black;
-    color: #fffffe;
 }
 
 ul {

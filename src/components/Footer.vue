@@ -1,35 +1,41 @@
 <template>
     <footer class="footer">
-        <p>© {{ buildDate }}- Mon Portfolio</p>
+
+        <div>
+            <h2><Code2 /> Aarin Deb</h2>
+            <p>Etudiant Développeur Web</p>
+        </div>
+
+        <p>© {{ buildDate }} Aarin Deb. Tous droits réservés.</p>
+
         <div class="social">
             <a href="https://www.linkedin.com/in/aarin-deb" target="_blank">
-                <img src="@/assets/linkedin.png" alt="LinkedIn Icon" class="icon">
+                <Github size="40"/>
             </a>
             <a href="https://github.com/userXXIIXII" target="_blank">
-                <img src="@/assets/github.png" alt="GitHub Icon" class="icon">
+                <Linkedin size="40"/>
             </a>
             <a href="https://www.instagram.com/aarin_dev/" target="_blank">
-                <img src="@/assets/insta.png" alt="Instagram Icon" class="icon">
+                <Instagram size="40" />
             </a>
         </div>
+
     </footer>
 </template>
 
 <script setup>
     const buildDate = import.meta.env.VITE_BUILD_DATE
+
+    import { Instagram, Github, Linkedin, Code2 } from 'lucide-vue-next';
 </script>
 
 <style scoped>
     .footer {
-        text-align: center;
-        padding: 10px 20px;
-        background-image: 
-        linear-gradient(rgba(22, 22, 26, 0.65), rgba(22, 22, 26, 0.65)),
-        url("@/assets/theme.png");
-        background-position: center;
-        background-size: cover;
-        box-shadow: 0 -3px 60px #7f5af0;
-        border-top: 2px solid #7f5af0;
+        background: #04070f;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 50px;
         box-sizing: border-box;
     }
 
@@ -47,5 +53,13 @@
 
     .icon:hover {
         filter: drop-shadow(10px 10px 10px #7f5af0);
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    h2 {
+        font-size: 22px;
     }
 </style>

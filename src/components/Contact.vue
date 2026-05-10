@@ -1,6 +1,18 @@
 <template>
     <section id="Contact">
-        <h1>Contactez moi</h1>
+        <div class="contactBio">
+            <h2><Mail size="40" color="#7f5af0"/> Contact</h2>
+            <p>
+                Une idée de projet ou une collaboration? <br>
+                N'hésitez pas à me contacter, je serai ravi d'échanger avec vous !
+            </p>
+        </div>
+
+        <div class="info">
+            <p><Mail /> aarindeb2003@gmail.com</p>
+            <p><Phone /> 06 50 24 13 97</p>
+            <p><MapPin /> Paris, France</p>
+        </div>
 
         <div class="contact">
 
@@ -16,7 +28,7 @@
                 <input v-model="objet" type="text" placeholder="Objet" required>
                 <textarea v-model="message" placeholder="Message" required></textarea>
 
-                <button type="submit">Envoyer</button>
+                <button type="submit">Envoyer <Send size="20"/></button>
             </form>
 
             <!--Affichier p si succes = true-->
@@ -30,6 +42,7 @@
 <script setup>
     import { ref} from "vue"
     import emailjs from "@emailjs/browser" //système pour l'envoi du message
+    import { Mail, Phone, MapPin, Send } from "lucide-vue-next"
 
     //Variable réactives
     const name = ref("")
@@ -75,119 +88,175 @@
         })
     }
 
-    
-
 </script>
 
 <style scoped>
 
+section {
+    min-height: calc(100vh - 100px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+    padding: 0 60px;
+}
+
+/* Bloc de gauche */
+.contactBio {
+    flex: 1;
+}
+
+.contactBio h2 {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 35px;
+    color: #fffffe;
+}
+
+.contactBio p {
+    line-height: 1.8;
+}
+
+/* Bloc du milieu */
+.info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding-left: 60px;
+    border-left: 1px solid rgba(148, 161, 178, 0.2);
+}
+
+.info p {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 0;
+}
+
+.info svg {
+    color: #94a1b2;
+}
+
+/* Formulaire à droite */
+.contact {
+    flex: 1.4;
+    max-width: 700px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 15px 18px;
+
+    border-radius: 8px;
+    border: 1px solid rgba(148, 161, 178, 0.25);
+
+    background-color: rgba(22, 22, 26, 0.45);
+    color: #fffffe;
+
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus,
+textarea:focus,
+input:hover,
+textarea:hover {
+    border-color: #7f5af0;
+    box-shadow: 0 0 0 2px rgba(127, 90, 240, 0.25);
+}
+
+textarea {
+    min-height: 120px;
+    resize: none;
+}
+
+button {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 14px 28px;
+    border: none;
+    border-radius: 8px;
+
+    background: #7f5af0;
+    color: #fffffe;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(127, 90, 240, 0.5);
+}
+
+.success {
+    margin-top: 15px;
+    color: #4ade80;
+    font-weight: 500;
+}
+
+.error {
+    margin-top: 15px;
+    color: #f87171;
+    font-weight: 500;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
     section {
-        height: calc(100vh - 200px);
-        display: flex;
+        min-height: auto;
         flex-direction: column;
-        align-items: center;
+        align-items: stretch;
+        gap: 40px;
+        padding: 60px 20px;
+    }
+
+    .info {
+        padding-left: 0;
+        border-left: none;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
         justify-content: center;
     }
+}
 
-    .contact {
-        width: 100%;
-        max-width: 420px;
-        margin: 80px auto;
-        padding: 30px;
-
-        background-image: linear-gradient(rgba(22, 22, 26, 0.65), rgba(22, 22, 26, 0.65)),
-        url("@/assets/theme.png");
-        background-position: center;
-        backdrop-filter: blur(10px);
-
-        border-radius: 16px;
-        box-shadow: 10px 10px 20px black;
-        border: 1px solid #94a1b2;
-
-        text-align: center;
-    }
-
-    form {
-        display: flex;
+/* Tablette */
+@media (min-width: 769px) and (max-width: 1024px) {
+    section {
+        min-height: auto;
         flex-direction: column;
-        align-items: center;
+        align-items: stretch;
+        gap: 40px;
+        padding: 60px 30px;
     }
 
-    /* inputs */
-    input, textarea {
-        width: 100%;
-        max-width: 400px;
-        margin: 10px 0;
-        padding: 12px 14px;
-
-        border-radius: 8px;
-        border: 1px solid transparent;
-
-        background-color: #242629;
-        box-shadow: 5px 5px 10px black;
-        color: white;
-
-        outline: none;
-        transition: 0.2s;
-        }
-
-        /* focus (quand l'utilisateur clique dessus)*/
-    input:focus, textarea:focus {
-        border: 1px solid #7f5af0;
-        box-shadow: 0 0 0 2px rgba(127,90,240,0.3);
+    .info {
+        padding-left: 0;
+        border-left: none;
     }
-
-    input:hover, textarea:hover {
-        border: 1px solid #7f5af0;
-        box-shadow: 0 0 0 2px rgba(127,90,240,0.3);
-    }
-
-    /* textarea */
-    textarea {
-        min-height: 100px;
-        resize: none;
-        }
-
-        /* bouton */
-    button {
-        margin-top: 15px;
-        width: 100%;
-
-        padding: 12px;
-        border: none;
-        border-radius: 8px;
-
-        background: linear-gradient(to bottom right, #9b8cff, #7f5af0, #16161a);
-        border: 2px solid #7f5af0;
-        color: white;
-        font-weight: bold;
-
-        cursor: pointer;
-        transition: 0.3s;
-    }
-
-    /* hover bouton */
-    button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 20px rgba(127,90,240,0.5);
-    }
-
-    /* bouton disabled */
-    button:disabled {
-        opacity: 0.6;
-        cursor: not-allowed;
-    }
-
-    /* message succès */
-    .success {
-        margin-top: 15px;
-        color: #4ade80;
-        font-weight: 500;
-    }
-
-    .error {
-        margin-top: 15px;
-        color: #f87171;
-        font-weight: 500;
-    }
+}
 </style>

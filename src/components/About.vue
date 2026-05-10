@@ -1,8 +1,8 @@
 <template>
-    <section id="About">
-        <h1>Qui suis-je ?</h1>
 
-        <div class="container">
+    <section id="About">
+        <div class="left">
+            <h1><UserRound size="40" color="#7f5af0"/> A propos</h1>
             <p class="bio">
                 Actuellement en formation au Centre Européen de Formation pour devenir 
                 développeur web, je me suis orienté vers ce métier par passion pour la 
@@ -19,27 +19,56 @@
                 et motivation, dans le but de devenir un développeur compétent et capable de 
                 concevoir des expériences web utiles, intuitives et modernes.
             </p>
-
-            <img src="@/assets/aboutPic.jpg" class="aboutPic" alt="About Photo">
         </div>
+
+        <div class="right">
+            <div class="detail">
+                <Code2 size="50" color="#7f5af0"/>
+                <h2>2+</h2>
+                <p>Années d'expériences</p>
+            </div>
+            <span></span>
+            <div class="detail">
+                <BriefcaseBusiness size="50" color="#7f5af0"/>
+                <h2>2+</h2>
+                <p>Projets réalisés</p>
+            </div>
+            <span></span>
+            <div class="detail">
+                <Rocket size="50" color="#7f5af0"/>
+                <h2>100%</h2>
+                <p>Engagement & Passion</p>
+            </div>
+        </div>
+
     </section>
+
 </template>
+
+<script setup>
+    import { UserRound, Code2, BriefcaseBusiness, Rocket } from 'lucide-vue-next';
+</script>
 
 <style scoped>
     section {
         min-height: calc(100vh - 100px);
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
-        justify-content: center;
-        gap: 50px;
+        justify-content: space-around;
     }
 
-    .container {
+    .left {
         display: flex;
+        flex-direction: column;
         justify-content: space-around;
-        align-items: center;
-        gap: 50px;
+        align-items: flex-start;
+    }
+
+    .right {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
     }
 
     .aboutPic {
@@ -51,7 +80,30 @@
 
     .bio {
         max-width: 850px;
-        text-align: center;
+    }
+
+    h1 {
+        font-size: 45px;
+        color: #fffffe;
+    }
+
+    h2 {
+        margin: 0;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    .detail {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    span {
+        border: 1px solid #94a1b2;
     }
 
     @media (max-width: 768px) {

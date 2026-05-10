@@ -16,7 +16,8 @@
             </p>
 
             <div class="btn-home">
-                <a href="#Project" class="btn btn-project">
+                <a href="#Project" 
+                class="btn btn-project">
                     Voir mes réalisations 
                     <ArrowRight />
                 </a>
@@ -58,9 +59,8 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-around;
         box-sizing: border-box;
-        padding: 0 50px;
         line-height: .5;
     }
 
@@ -77,7 +77,7 @@
     .pp {
         max-height: 550px;
         border-radius: 50%;
-        box-shadow: 0 0 20px #7f5af0;
+        box-shadow: 0 0 30px #7f5af0;
         border: 2px solid #7f5af0;  
     }
 

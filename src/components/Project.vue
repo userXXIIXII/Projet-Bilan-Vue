@@ -1,26 +1,41 @@
 <template>
     <section id="Project">
-        <h1>Mes réalisations</h1>
+        <h2>
+            <Folder size="40" color="#7f5af0" />
+            Réalisations
+        </h2>
 
-        <!--Carte projet-->
         <div class="projects">
-            <!--Pourchaque éléments dans projects, je l'appelle 
-            key = identifiant unique pour chaque projet
-            v-for = parcourt chaque projet du tableau-->
-            <div v-for="p in projects" :key="p.id" class="card">
-                <h3>{{ p.titre }}</h3>
-                <img :src="p.preview" class="card-image" alt="Image du Projet">
+            <article v-for="p in projects" :key="p.id" class="card">
+                <!-- Image du projet -->
+                <div class="image-container">
+                    <img :src="p.preview" class="card-image" alt="Aperçu du projet">
+                </div>
 
-                <!--Au click, selected devient le projet cliqué-->
-                <button @click="selected = p">Voir</button>
-            </div>
+                <!-- Contenu de la carte -->
+                <div class="card-content">
+                    <div class="title-line">
+                        <component :is="p.icon" class="project-icon" />
+                        <h3>{{ p.titre }}</h3>
+                    </div>
+
+                    <p class="description">
+                        {{ p.description }}
+                    </p>
+
+                    <div class="tags">
+                        <span v-for="tech in p.technologies" :key="tech">
+                            {{ tech }}
+                        </span>
+                    </div>
+
+                    <button class="see-btn" @click="selected = p">
+                        Voir
+                        <ArrowUpRight />
+                    </button>
+                </div>
+            </article>
         </div>
-
-        <!--Si selected = true, alors le modal s'affiche
-        
-        Modal qui affiche les détails du projet sélectionné
-        
-        Selected = la variable qui contient le projet choisi-->
 
         <Modal 
             :isOpen="selected !== null"
@@ -29,150 +44,187 @@
             :image="selected?.image"
             :demo="selected?.demo"
             :github="selected?.github"
+            :technologies="selected?.technologies"
+            :icon="selected?.icon"
             @close="selected = null"
-
         />
-
-        <p class="bio">
-            Sur cette page, vous trouverez un aperçu détaillé de 
-            mes réalisations en développement web, du front-end 
-            au back-end. Chaque projet illustre non seulement ma 
-            maîtrise des technologies modernes, mais aussi ma 
-            capacité à concevoir des interfaces intuitives, à résoudre 
-            des problèmes complexes et à créer des expériences 
-            utilisateurs fluides et engageantes.
-        </p>
     </section>
 </template>
 
 <script setup>
-    import Modal from './Modal/Modal.vue'
-    import { ref } from "vue"
+import Modal from './Modal/Modal.vue'
+import { ref } from "vue"
+import { Folder, ArrowUpRight } from 'lucide-vue-next'
+import { useProjects } from '@/composables/useProjects'
 
-    import meteoImg from '@/assets/weather-app-img.png'
-    import meteoIcon from '@/assets/weather-app.png'
-    import cvImg from '@/assets/cvImg.png'
-    import cvIcon from '@/assets/cvIcon.png'
+const selected = ref(null)
 
-    //Modal fermée par défaut
-
-    const selected = ref(null)
-
-    const projects = [
-        {
-            id: 1,
-            titre: "App météo - 2026",
-            description: "Ce projet est une application météo développée en HTML, CSS et JavaScript, permettant d’afficher la météo grâce à JavaScript et à l’utilisation d’une API.",
-            image: meteoImg,
-            preview: meteoIcon,
-            demo: "https://userxxiixii.github.io/weather_app/",
-            github: "https://github.com/userXXIIXII/weather_app"
-        },
-
-        {
-            id: 2,
-            titre: "CV HTML - 2024",
-            description: "CV développé en HTML, mettant en avant une structure claire et sémantique pour présenter mes informations personnelles, mes compétences et mon parcours.",
-            image: cvImg,
-            preview: cvIcon,
-            demo: "https://userxxiixii.github.io/CV-CEF/",
-            github: "https://github.com/userXXIIXII/CV-CEF"
-        }
-    ]
+const { projects } = useProjects()
 </script>
 
 <style scoped>
-    section {
-        min-height: calc(100vh - 200px);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 50px;
-    }
+section {
+    min-height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+    padding: 80px 50px;
+}
 
-    .bio {
-        max-width: 850px;
-        text-align: center;
+h2 {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Ensemble des cartes */
+.projects {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    flex-wrap: wrap;
+}
+
+/* Carte */
+.card {
+    width: 360px;
+    min-height: 520px;
+
+    display: flex;
+    flex-direction: column;
+
+    background: #0a0d16;
+    border: 1px solid rgba(148, 161, 178, 0.35);
+    border-radius: 20px;
+    overflow: hidden;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(127, 90, 240, 0.8);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* Image du projet */
+.image-container {
+    height: 230px;
+    padding: 18px;
+    background: #070a12;
+}
+
+.image-container {
+    height: 230px;
+    padding: 18px;
+    background: #070a12;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;      /* au lieu de cover */
+    object-position: center;
+    border-radius: 14px;
+    border: 1px solid rgba(148, 161, 178, 0.2);
+}
+
+/* Contenu */
+.card-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+}
+
+.title-line {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 18px;
+}
+
+.project-icon {
+    width: 34px;
+    height: 34px;
+    color: #7f5af0;
+    padding: 7px;
+    border: 1px solid rgba(127, 90, 240, 0.7);
+    border-radius: 10px;
+}
+
+.card h3 {
+    margin: 0;
+    font-size: 24px;
+    color: #fffffe;
+}
+
+.description {
+    margin: 0 0 22px;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+/* Tags technos */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.tags span {
+    padding: 7px 13px;
+    border: 1px solid rgba(127, 90, 240, 0.55);
+    border-radius: 8px;
+    color: #9b8cff;
+    font-size: 14px;
+    background: rgba(127, 90, 240, 0.08);
+}
+
+/* Bouton Voir */
+.see-btn {
+    margin-top: auto;
+    align-self: flex-end;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    border: none;
+    background: transparent;
+    color: #9b8cff;
+    font-size: 18px;
+    cursor: pointer;
+
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.see-btn:hover {
+    transform: translateX(4px);
+    color: #fffffe;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    section {
+        padding: 60px 20px;
     }
 
     .projects {
-        display: flex;
-        gap: 50px;
-        justify-content: center;
-    }
-
-    /* carte */
-    .card {
-        display: flex;
         flex-direction: column;
-        justify-content: space-around;
         align-items: center;
-        width: 300px;
-        height: 300px;
-        background-image: linear-gradient(rgba(22, 22, 26, 0.65), rgba(22, 22, 26, 0.65)),
-        url("@/assets/theme.png");
-        background-position: center;
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 10px 10px 20px black;
-        border: 1px solid #94a1b2;
-
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    /* image */
-    .card-image {
-        height: 150px;
-        width: 150px;
-        filter: drop-shadow(10px 10px 10px black);
+    .card {
+        width: 100%;
+        max-width: 360px;
     }
-
-    /* contenu */
-    .card-content {
-        padding: 15px;
-        text-align: center;
-    }
-
-    .card>h3 {
-        color: white;
-        font-size: 16px;
-        margin: 10px 0;
-    }
-
-    /* bouton */
-    .card button {
-        padding: 10px 14px;
-        border: none;
-        border-radius: 6px;
-        background: linear-gradient(to bottom right, #9b8cff, #7f5af0, #16161a);
-        border: 2px solid #7f5af0;
-        box-shadow: 5px 5px 20px black;
-        color: #fffffe;
-        font-weight: 700;
-        cursor: pointer;
-        transition: transform 0.3s ease;
-    }
-
-    .card button:hover {
-        transform: scale(1.1);
-        box-shadow: 5px 5px 20px rgba(127, 90, 240, 0.5);
-    }
-
-    /* hover effet */
-    .card:hover {
-        transform: scale(1.1);
-        box-shadow: 20px 20px 50px black;
-    }
-
-    @media (max-width: 768px) {
-        .projects {
-            flex-direction: column;
-        }
-    }
-
-    @media (min-width: 769px) and (max-width: 1024px) {
-
-    }
+}
 </style>
-
