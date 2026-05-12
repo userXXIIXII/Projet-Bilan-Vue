@@ -7,11 +7,14 @@
     box-sizing: border-box;
 }
 
-html, body, #app {
+html,
+body,
+#app {
     margin: 0;
     padding: 0;
     width: 100%;
     min-width: 100%;
+    background: #04070f;
 }
 
 html, body {
@@ -91,30 +94,60 @@ select {
     font-family: inherit;
 }
 
-    @media (max-width: 768px) {
+@media (max-width: 768px) {
         main {
-            margin-top: 120px;
-            padding-left: 20px;
-            padding-right: 20px;
+            margin-top: 100px;
+            padding: 0;
+        }
+
+        section {
+            scroll-margin-top: 100px;
+        }
+
+        a:hover {
+            transform: none;
         }
 
         h1 {
-            font-size: 35px;
+            font-size: 38px;
+            line-height: 1.15;
         }
-        
+
         h2 {
             font-size: 26px;
+            line-height: 1.25;
         }
 
         p {
-            font-size: 20px;
-            line-height: 1.5;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        li {
+            font-size: 17px;
         }
     }
 
     @media (min-width: 769px) and (max-width: 1024px) {
         main {
-            padding: 0 20px;
-            margin-top: 160px;
+            margin-top: 120px;
+            padding: 0;
+        }
+
+        section {
+            scroll-margin-top: 120px;
+        }
+
+        h1 {
+            font-size: 52px;
+            line-height: 1.15;
+        }
+
+        h2 {
+            font-size: 30px;
+        }
+
+        p {
+            font-size: 19px;
         }
     }

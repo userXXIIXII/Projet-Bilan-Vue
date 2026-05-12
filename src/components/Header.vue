@@ -169,117 +169,87 @@
     }
 
     @media (max-width: 768px) {
-
-        header {
-            flex-direction: row;
-            height: auto;
-            padding: 20px;
-        }
-
-        .logo {
-            height: 120px;
-        }
-
-        /* burger visible */
-        .burger {
-            display: block;
-        }
-
-        /* menu caché */
-        nav {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 100%;
-
-            background-image: linear-gradient(rgba(22, 22, 26, 0.65), rgba(22, 22, 26, 0.65)),
-            url("@/assets/theme.png");
-            background-position: center;
-            background-size: cover;
-
-            box-shadow: 0 15px 30px black;
-            border-top: 1px solid #9b8cff;
-
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px 0;
-
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-20px);
-
-            transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
-        }
-
-        /* menu ouvert */
-        nav.open {
-            display: flex;
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        nav a {
-            margin: 10px 0;
-            font-size: 18px;
-        }
+    header {
+        height: 90px;
+        padding: 0 20px;
+        justify-content: space-between;
     }
+
+    .logo {
+        height: 75px;
+    }
+
+    .btn-cv {
+        display: none;
+    }
+
+    .burger {
+        display: block;
+        z-index: 200;
+    }
+
+    nav {
+        position: absolute;
+        top: 90px;
+        left: 0;
+        width: 100%;
+
+        background: #04070f;
+        border-top: 1px solid #7f5af0;
+        box-shadow: 0 15px 30px black;
+
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-15px);
+
+        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+    }
+
+    nav.open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        padding: 30px 0;
+    }
+
+    nav a {
+        font-size: 18px;
+    }
+}
 
     /* TABLETTE */
 
     @media (min-width: 769px) and (max-width: 1024px) {
-        header {
-            height: 160px;
-            padding: 0 20px;
-            justify-content: space-between;
-        }
-
-        .logo {
-            height: 150px;
-        }
-
-        /* burger visible */
-        .burger {
-            display: block;
-        }
-
-        nav {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 100%;
-
-            background-image: linear-gradient(rgba(22, 22, 26, 0.65), rgba(22, 22, 26, 0.65)),
-            url("@/assets/theme.png");
-            background-position: center;
-            background-size: cover;
-
-            box-shadow: 0 15px 30px black;
-            border-top: 1px solid #9b8cff;
-
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px 0;
-
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-20px);
-
-            transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
-        }
-
-        nav.open {
-            display: flex;
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        nav a {
-            margin: 10px 0;
-            font-size: 20px;
-        }
+    header {
+        height: 100px;
+        padding: 0 30px;
+        justify-content: space-between;
     }
+
+    .logo {
+        height: 85px;
+    }
+
+    ul {
+        gap: 25px;
+    }
+
+    .btn-cv {
+        width: 170px;
+        height: 42px;
+        font-size: 14px;
+        gap: 10px;
+    }
+
+    .icon {
+        height: 18px;
+        width: 18px;
+    }
+}
 </style>

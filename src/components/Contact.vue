@@ -219,44 +219,82 @@ button:hover {
     font-weight: 500;
 }
 
-/* Mobile */
-@media (max-width: 768px) {
-    section {
-        min-height: auto;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 40px;
-        padding: 60px 20px;
+    @media (max-width: 768px) {
+        section {
+            min-height: auto;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 35px;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .contactBio h2 {
+            justify-content: center;
+        }
+
+        .info {
+            padding-left: 0;
+            border-left: none;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .info p {
+            justify-content: center;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+
+        .contact {
+            max-width: 100%;
+        }
+
+        .form-row {
+            flex-direction: column;
+        }
+
+        input,
+        textarea {
+            font-size: 16px;
+        }
+
+        textarea {
+            min-height: 150px;
+        }
+
+        button {
+            width: 100%;
+            justify-content: center;
+        }
     }
 
-    .info {
-        padding-left: 0;
-        border-left: none;
-    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+        section {
+            min-height: auto;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 40px;
+            padding: 80px 40px;
+            text-align: center;
+        }
 
-    .form-row {
-        flex-direction: column;
-    }
+        .contactBio h2 {
+            justify-content: center;
+        }
 
-    button {
-        width: 100%;
-        justify-content: center;
-    }
-}
+        .info {
+            padding-left: 0;
+            border-left: none;
+            align-items: center;
+        }
 
-/* Tablette */
-@media (min-width: 769px) and (max-width: 1024px) {
-    section {
-        min-height: auto;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 40px;
-        padding: 60px 30px;
-    }
+        .contact {
+            max-width: 100%;
+        }
 
-    .info {
-        padding-left: 0;
-        border-left: none;
+        button {
+            align-self: center;
+        }
     }
-}
 </style>

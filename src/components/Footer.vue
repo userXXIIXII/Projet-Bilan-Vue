@@ -62,4 +62,34 @@
     h2 {
         font-size: 22px;
     }
+
+    @media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        gap: 20px;
+        padding: 30px 20px;
+        text-align: center;
+    }
+
+    .social {
+        gap: 20px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .footer {
+        flex-direction: column;
+        gap: 20px;
+        padding: 35px 30px;
+        text-align: center;
+    }
+}
 </style>
