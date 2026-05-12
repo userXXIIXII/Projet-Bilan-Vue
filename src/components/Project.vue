@@ -14,7 +14,7 @@
 
                 <!-- Contenu de la carte -->
                 <div class="card-content">
-                    <div class="title-line">
+                    <div class="titre">
                         <component :is="p.icon" class="project-icon" />
                         <h3>{{ p.titre }}</h3>
                     </div>
@@ -105,7 +105,7 @@ h2 {
 
 .card:hover {
     transform: translateY(-8px);
-    border-color: rgba(127, 90, 240, 0.8);
+    border-color: #7f5af0;
     box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
 }
 
@@ -143,7 +143,7 @@ h2 {
     padding: 24px;
 }
 
-.title-line {
+.titre {
     display: flex;
     align-items: center;
     gap: 15px;
@@ -171,7 +171,7 @@ h2 {
     line-height: 1.7;
 }
 
-/* Tags technos */
+/* Tags tech */
 .tags {
     display: flex;
     flex-wrap: wrap;
@@ -181,7 +181,7 @@ h2 {
 
 .tags span {
     padding: 7px 13px;
-    border: 1px solid rgba(127, 90, 240, 0.55);
+    border: 1px solid #7f5af0;
     border-radius: 8px;
     color: #9b8cff;
     font-size: 14px;
