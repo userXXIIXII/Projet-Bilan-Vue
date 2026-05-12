@@ -326,13 +326,22 @@ h2 {
     .description {
         font-size: 16px;
     }
-
     .buttons {
         flex-direction: column;
+        gap: 14px;
     }
 
     .btn {
         width: 100%;
+        min-height: 52px;
+        padding: 14px 18px;
+        font-size: 17px;
+        border-radius: 12px;
+    }
+
+    .btn svg {
+        width: 22px;
+        height: 22px;
     }
 }
 </style>
