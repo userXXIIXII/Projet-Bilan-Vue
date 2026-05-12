@@ -147,8 +147,9 @@
             align-items: center;
         }
 
-        .left p {
-            max-width: 100%;
+        .left {
+            align-items: center;
+            width: 100%;
         }
 
         .right {
@@ -161,15 +162,18 @@
         }
 
         .btn-home {
+            display: flex;
             flex-direction: column;
+            align-items: center;
             width: 100%;
-            gap: 15px;
+            gap: 18px;
         }
 
         .btn-project,
         .btn-contact {
             width: 100%;
-            max-width: 320px;
+            max-width: 400px;
+            margin: 0 auto;
         }
 
         .social {
