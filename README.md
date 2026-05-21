@@ -62,8 +62,6 @@ Version Node recommandée :
 node -v
 ```
 
-Le projet utilise une configuration prévue pour Node `^20.19.0` ou `>=22.12.0`.
-
 ## Installation du projet
 
 ### 1. Cloner le repository
