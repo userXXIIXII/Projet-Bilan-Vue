@@ -6,6 +6,7 @@
         </h2>
 
         <div class="projects">
+            <!--Pour chaque project dans projects, je l'appelle p-->
             <article v-for="p in projects" :key="p.id" class="card">
                 <!-- Image du projet -->
                 <div class="image-container">
@@ -24,6 +25,8 @@
                     </p>
 
                     <div class="tags">
+                        <!--pour chaque technologie dans p.technologies, je l'appelle tech
+                        Généres automatiquement d'autres span pour les autres techs-->
                         <span v-for="tech in p.technologies" :key="tech">
                             {{ tech }}
                         </span>
@@ -37,6 +40,7 @@
             </article>
         </div>
 
+        <!-- ?. = Optional Chaining, permet d'éviter une erreur si selected vaut encore null-->
         <Modal 
             :isOpen="selected !== null"
             :titre="selected?.titre"
@@ -52,14 +56,16 @@
 </template>
 
 <script setup>
-import Modal from './Modal/Modal.vue'
-import { ref } from "vue"
-import { Folder, ArrowUpRight } from 'lucide-vue-next'
-import { useProjects } from '@/composables/useProjects'
+    import Modal from './Modal/Modal.vue'
+    import { ref } from "vue"
+    import { Folder, ArrowUpRight } from 'lucide-vue-next'
+    //composable qui contient les données des projets
+    import { useProjects } from '@/composables/useProjects' 
 
-const selected = ref(null)
+    //variable réactive selected avec ref
+    const selected = ref(null)
 
-const { projects } = useProjects()
+    const { projects } = useProjects()
 </script>
 
 <style scoped>

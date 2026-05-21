@@ -31,6 +31,8 @@
 
                 <!-- Technologies -->
                 <div class="tags">
+                    <!--Pour chaque technologie dans technologies je l'appelle tech-->
+                    <!--Ajout de span automatique pour chaque tech-->
                     <span v-for="tech in technologies" :key="tech">
                         {{ tech }}
                     </span>

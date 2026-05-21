@@ -6,7 +6,9 @@ import { CloudSunRain, FileUser, PanelsTopLeft } from 'lucide-vue-next'
 
 export function useProjects() {
     const projects = [
+        //Liste de projets
         {
+            //Chaque projet = un objet avec ses infos
             id: 1,
             titre: "CV HTML - 2024",
             description: "CV développé en HTML avec une structure claire et sémantique pour présenter mon parcours et mes compétences.",
