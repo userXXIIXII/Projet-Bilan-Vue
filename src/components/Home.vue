@@ -42,7 +42,7 @@
         </div>
 
         <div class="right">
-            <img src="@/assets/photoHome.png" class="pp" alt="Photo de Aarin Deb">
+            <img src="@/assets/pp3.png" class="pp" alt="Photo de Aarin Deb">
         </div>
         
 
