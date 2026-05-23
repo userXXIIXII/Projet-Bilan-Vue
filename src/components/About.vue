@@ -30,7 +30,7 @@
             <span></span>
             <div class="detail">
                 <BriefcaseBusiness size="50" color="#7f5af0"/>
-                <h2>2+</h2>
+                <h2>3+</h2>
                 <p>Projets réalisés</p>
             </div>
             <span></span>

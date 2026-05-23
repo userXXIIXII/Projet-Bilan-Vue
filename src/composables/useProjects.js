@@ -1,8 +1,9 @@
 import meteoImg from '@/assets/weather-app-img.png'
 import cvImg from '@/assets/cvImg.png'
 import portfolioImg from '@/assets/portfolioImg.png'
+import taskflowImg from '@/assets/Taskflow.png'
 
-import { CloudSunRain, FileUser, PanelsTopLeft } from 'lucide-vue-next'
+import { CloudSunRain, FileUser, PanelsTopLeft, ClipboardCheck } from 'lucide-vue-next'
 
 export function useProjects() {
     const projects = [
@@ -42,6 +43,18 @@ export function useProjects() {
             technologies: ["Vue.js", "CSS", "Vite"],
             demo: "https://portfolio-aarin-deb.vercel.app/",
             github: "https://github.com/userXXIIXII/Projet-Bilan-Vue"
+        },
+
+        {
+            id: 4,
+            titre: "Taskflow - 2026",
+            description: "Application React de gestion de tâches avec ajout, suppression et changement de statut, intégrée dans une interface responsive.",
+            image: taskflowImg, 
+            preview: taskflowImg, 
+            icon: ClipboardCheck,
+            technologies: ["React.js", "CSS", "Vite"],
+            demo: "https://userxxiixii.github.io/Taskflow-react/",
+            github: "https://github.com/userXXIIXII/Taskflow-react"
         }
     ]
 
