@@ -303,47 +303,77 @@ h2 {
 /* Mobile */
 @media (max-width: 768px) {
     .modal {
-        padding: 15px;
+        padding: 10px;
     }
 
     .modal-inner {
-        padding: 24px;
+        width: 100%;
+        max-width: 100%;
+        max-height: calc(100vh - 20px);
+        overflow-y: hidden;
+        padding: 20px;
         border-radius: 18px;
     }
 
     .modal-header {
-        gap: 14px;
-        margin-bottom: 22px;
+        gap: 12px;
+        margin-bottom: 18px;
+        padding-right: 20px;
     }
 
     .icon-box {
-        width: 48px;
-        height: 48px;
+        width: 44px;
+        height: 44px;
     }
 
     h2 {
-        font-size: 24px;
+        font-size: 22px;
+        margin-bottom: 0;
+    }
+
+    .image-container {
+        padding: 12px;
+        margin-bottom: 18px;
+        aspect-ratio: 4 / 3;
+    }
+
+    .modal-image {
+        border-radius: 10px;
     }
 
     .description {
-        font-size: 16px;
+        font-size: 15px;
+        line-height: 1.6;
+        margin-bottom: 18px;
     }
+
+    .tags {
+        gap: 8px;
+        margin-bottom: 20px;
+    }
+
+    .tags span {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+
     .buttons {
         flex-direction: column;
-        gap: 14px;
+        gap: 12px;
+        padding-top: 18px;
     }
 
     .btn {
         width: 100%;
-        min-height: 52px;
-        padding: 14px 18px;
-        font-size: 17px;
+        min-height: 46px;
+        padding: 12px 16px;
+        font-size: 15px;
         border-radius: 12px;
     }
 
     .btn svg {
-        width: 22px;
-        height: 22px;
+        width: 18px;
+        height: 18px;
     }
 }
 </style>

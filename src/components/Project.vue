@@ -20,10 +20,6 @@
                         <h3>{{ p.titre }}</h3>
                     </div>
 
-                    <p class="description">
-                        {{ p.description }}
-                    </p>
-
                     <div class="tags">
                         <!--pour chaque technologie dans p.technologies, je l'appelle tech
                         Généres automatiquement d'autres span pour les autres techs-->
@@ -95,7 +91,7 @@ h2 {
 /* Carte */
 .card {
     width: 360px;
-    min-height: 520px;
+    min-height: 450px;
 
     display: flex;
     flex-direction: column;

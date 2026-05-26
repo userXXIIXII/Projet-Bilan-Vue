@@ -27,6 +27,13 @@
                         Contact
                     </a>
                 </li>
+                <li class="cv-nav-item">
+                    <a href="/src/public/CV.pdf" download class="btn btn-cv"
+                    @click="isOpen = false">
+                        Télécharger CV
+                        <Download class="icon"/>
+                    </a>
+                </li>
             </ul>
         </nav>
 
@@ -102,11 +109,12 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 15px;
+        gap: 12px;
 
         border-radius: 8px;
         text-decoration: none;
         font-weight: 500;
+        font-size: 14px;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
@@ -116,6 +124,11 @@
         color: #94a1b2;
         height: 40px;
         width: 200px;
+        padding: 0 16px;
+    }
+
+    nav .cv-nav-item {
+        display: none;
     }
 
     .icon {
@@ -183,6 +196,15 @@
         display: none;
     }
 
+    nav .cv-nav-item {
+        display: block;
+    }
+
+    nav .cv-nav-item .btn-cv {
+        display: flex;
+        width: auto;
+    }
+
     .burger {
         display: block;
         z-index: 200;
@@ -219,7 +241,12 @@
     }
 
     nav a {
-        font-size: 18px;
+        font-size: 16px;
+    }
+
+    nav .cv-nav-item .btn-cv {
+        width: auto;
+        padding: 10px 18px;
     }
 }
 
@@ -241,10 +268,22 @@
     }
 
     .btn-cv {
+        display: none;
         width: 170px;
         height: 42px;
         font-size: 14px;
         gap: 10px;
+        padding: 0 14px;
+    }
+
+    nav .cv-nav-item {
+        display: block;
+    }
+
+    nav .cv-nav-item .btn-cv {
+        display: flex;
+        width: auto;
+        padding: 11px 18px;
     }
 
     .icon {
