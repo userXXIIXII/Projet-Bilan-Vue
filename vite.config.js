@@ -10,6 +10,7 @@ export default defineConfig({
     vue(),
     vueDevTools(),
   ],
+  publicDir: 'src/public',
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))

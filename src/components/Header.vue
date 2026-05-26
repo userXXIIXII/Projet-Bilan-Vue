@@ -28,7 +28,7 @@
                     </a>
                 </li>
                 <li class="cv-nav-item">
-                    <a href="/src/public/CV.pdf" download class="btn btn-cv"
+                    <a href="/CV.pdf" download class="btn btn-cv"
                     @click="isOpen = false">
                         Télécharger CV
                         <Download class="icon"/>
@@ -45,7 +45,7 @@
             <span></span>
         </div>
 
-        <a href="/src/public/CV.pdf" download class="btn btn-cv">
+        <a href="/CV.pdf" download class="btn btn-cv">
             Télécharger CV 
             <Download class="icon"/>
         </a>
