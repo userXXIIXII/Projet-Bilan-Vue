@@ -1,7 +1,6 @@
 import meteoImg from '@/assets/weather-app-img.png'
 import cvImg from '@/assets/cvImg.png'
 import portfolioImg from '@/assets/portfolioImg.png'
-import taskflowImg from '@/assets/Taskflow.png'
 
 import { CloudSunRain, FileUser, PanelsTopLeft, ClipboardCheck } from 'lucide-vue-next'
 

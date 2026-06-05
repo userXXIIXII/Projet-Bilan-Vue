@@ -61,6 +61,7 @@
     //variable réactive selected avec ref
     const selected = ref(null)
 
+    //je récupère les projets depuis le composable useProjects, et je les stocke dans une variable projects 
     const { projects } = useProjects()
 </script>
 
